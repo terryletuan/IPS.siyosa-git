@@ -1,0 +1,365 @@
+﻿@using IndoorTracking_DAL.Entity
+@using IndoorTracking.Common
+@using IndoorTracking_DAL.Model
+@{
+    Layout = null;
+    List<DeviceModel> device = ViewBag.device;
+}
+
+<!DOCTYPE html>
+<html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>Indoor track Dashboard</title>
+    <meta name="description" content="Accuware dashboard - alpha version">
+    <meta name="author" content="Accuware, Inc.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icon57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="img/icon72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="img/icon76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="img/icon114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="img/icon120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="img/icon144.png" sizes="144x144">
+    <link rel="apple-touch-icon" href="img/icon152.png" sizes="152x152">
+
+
+    <!-- END Icons -->
+    <!-- jQuery UI resizable -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- Stylesheets -->
+    <link href="~/css/its.css" rel="stylesheet" />
+    <link href="~/Content/Tracking/dhtmlxtoolbar_dhx_black.css" rel="stylesheet" />
+    <link href="~/Content/Tracking/dhtmlxtoolbar_dhx_web.css" rel="stylesheet" />
+    <!-- Bootstrap is included in its original form, unaltered -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Related styles of various icon packs and plugins -->
+    <link href="~/css/plugins.css" rel="stylesheet" />
+    <!-- The main stylesheet of this template. All Bootstrap overwrites are defined in here -->
+    <link href="~/css/main.css" rel="stylesheet" />
+    <!-- Include a specific file here from css/themes/ folder to alter the default theme of the template -->
+    <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
+    <link href="~/css/themes.css" rel="stylesheet" />
+    <!-- END Stylesheets -->
+    <!-- Modernizr (browser feature detection library) & Respond.js (Enable responsive CSS code on browsers that don't support it, eg IE8) -->
+    <script src="~/Scripts/Tracking_js/modernizr-2.7.1-respond-1.4.2.min.js"></script>
+    <style type="text/css">
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+    <script src="~/Lib/jquery/jquery-2.1.0.min.js"></script>
+    @*<script src="~/Content/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>*@
+    <link href="~/Content/assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+    <script src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jspdf.js"></script>
+</head>
+<body>
+    @*show permition*@
+    <input type="hidden" value="@ViewBag.permition" class="permition-system" />
+    <ul class="display-none">
+        @if (device != null)
+        {
+            foreach (var item in device)
+            {
+                <li class="@item.Device_mac" data-color="@item.Color"></li>
+            }
+        }
+    </ul>
+    <div id="page-container" class="header-fixed-top sidebar-partial sidebar-visible-lg sidebar-no-animations">
+
+        <!-- Main Sidebar -->
+        <div id="sidebar">
+            <!-- Wrapper for scrolling functionality -->
+            <div class="sidebar-scroll">
+                <!-- Sidebar Content -->
+                <div class="sidebar-content">
+                    <!-- Brand -->
+                    <div class="sidebar-brand">
+                        <h4 style="margin-top: 28px">DASHBOARD DEMO</h4>
+                    </div>
+                    <!-- END Brand -->
+                    <!-- Sidebar Navigation -->
+                    <div id="sidebar_panel">
+
+                    </div>
+
+                    <!-- END Sidebar Navigation -->
+                </div>
+                <!-- END Sidebar Content -->
+            </div>
+            <!-- END Wrapper for scrolling functionality -->
+        </div>
+        <!-- END Main Sidebar -->
+        <!-- Main Container -->
+        <div id="main-container">
+            <header class="navbar navbar-default navbar-fixed-top">
+                <!-- Left Header Navigation -->
+                <ul class="nav navbar-nav-custom">
+                    <!-- Main Sidebar Toggle Button -->
+                    <li>
+                        <a href="javascript:void(0)" onclick=" ProUiApp.sidebar('toggle-sidebar'); ">
+                            <i class="fa fa-bars fa-fw"></i>
+                        </a>
+                    </li>
+                    <li style="line-height 3;margin-left 116px;font-size 16px;">
+                        @*<img src="~/img/accuware-logo.png" width="200" />*@
+                        @*<img src="~/img/Hoya-logo.png" width="200"/>*@
+                        <img src="~/img/SiYoSa-Logo-Motto.png" width="200" />
+                    </li>
+                    <!-- END Main Sidebar Toggle Button -->
+                </ul>
+                <ul class="nav navbar-nav-custom pull-right">
+                    <!-- Main Sidebar Toggle Button -->
+                    <li>
+                        <a>Hello: @Command.GetUserCookie()</a>
+                       
+                    </li>
+
+                </ul>
+                <!-- END Left Header Navigation -->
+                <div id="header_panel">
+                </div>
+            </header>
+            <!-- END Header -->
+            <!-- Page content -->
+            <div id="page-content" style="display: none">
+                <h2 class="sub-header">
+                    <i class="fa fa-spinner fa-spin"></i> Loading dashboard...
+                </h2>
+            </div>
+
+
+
+
+            @*Weareabout map new*@
+            @Html.Action("MapTracking", "Layout")
+            @*End Weareabout map new*@
+
+            @*Report*@
+            @Html.Action("Report", "Layout")
+            @*End Report*@
+
+            @*GroupDevice*@
+            @Html.Action("GroupDevice", "Layout")
+            @* End GroupDevice *@
+
+
+            @*Device *@
+            @Html.Action("Device", "Layout")
+            @* End Device *@
+
+
+            @*User *@
+            @Html.Action("User", "Layout")
+            @* End User *@
+            @*User *@
+            @Html.Action("ChangePassword", "Layout")
+            @* End User *@
+
+            @*User Group *@
+            @Html.Action("UserGroup", "Layout")
+            @* End User Group *@
+            @*Fingerprints*@
+            @Html.Action("Fingerprints", "Layout")
+            @*End Fingerprints*@
+
+            @*Rp_By_tracked_tag*@
+            @Html.Action("Rp_By_tracked_tag", "Layout")
+            @*End Rp_By_tracked_tag*@
+            @*Rp_By_tracked_tag*@
+            @Html.Action("Rp_By_tracked_tagF", "Layout")
+            @*End Rp_By_tracked_tag*@
+            @*Rp_By_group*@
+            @Html.Action("Rp_By_group", "Layout")
+            @*End Rp_By_group*@
+            @*Rp_Comparetrackedtag*@
+            @Html.Action("Rp_Comparetrackedtag", "Layout")
+            @*End Rp_Comparetrackedtag*@
+
+            @*Rp_Rp_By_aminition*@
+            @Html.Action("Rp_By_aminition", "Layout")
+            @*End Rp_Rp_By_aminition*@
+
+            @*Rp_Rp_By_Simulation*@
+            @Html.Action("Rp_Simulation", "Layout")
+            @*End Rp_Rp_By_aminition*@
+
+            @*Rp_logtime*@
+            @Html.Action("Rp_logtime", "Layout")
+            @*End Rp_logtime*@
+
+            @*GroupFindgprint*@
+            @Html.Action("GroupFindgprint", "Layout")
+            @*End GroupFindgprint*@
+
+            @*AutoFindAddress*@
+            @Html.Action("AutoFindAddress", "Layout")
+            @*End GroupFindgprint*@
+            <div id="modal">
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title group-device-form1" id="myModalLabel">Add/Edit Group Device</h4>
+                            <h4 class="modal-title device-form1">Add/Edit Device</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal group-device-form" novalidate="novalidate">
+
+                                <!-- MAC Address -->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">ID code</label>
+                                    <div class="col-md-4">
+                                        <input type="hidden" id="GroupID" name="GroupID" />
+                                        <input name="MACGROUP" id="Macgroup" value="" class="form-control" placeholder="MAC Group">
+
+                                    </div>
+                                </div>
+
+                                <!-- Name -->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Group name</label>
+                                    <div class="col-md-6">
+
+                                        <input name="Namegroup" id="Namegroup" value="" class="form-control" placeholder="Name Group" maxlength="20">
+
+                                    </div>
+                                </div>
+
+                                <!-- Desc -->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Description</label>
+                                    <div class="col-md-6">
+
+                                        <input type="text" name="descgroup" id="descgroup" value="" class="form-control" placeholder="Description" maxlength="60">
+
+                                    </div>
+                                </div>
+
+                                <!-- submit save group device -->
+                                <div class="form-group text-center">
+                                    <div class="col-md-12">
+                                        <input type="button" class="btn btn-success btn-addGroup" value="Save" />
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form-horizontal device-form">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Select tracked tag:</label>
+                                    <div class="col-md-4">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Add to Group</label>
+                                    <div class="col-md-4">
+                                        <input type="hidden" id="DeviceID" name="DeviceID" />
+                                        <select class="form-control List-device-group"></select>
+                                    </div>
+                                </div>
+
+                                <!-- submit save group device -->
+                                <div class="form-group text-center">
+                                    <div class="col-md-12">
+                                        <input type="button" class="btn btn-success btn-adddevice" value="Save" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END Page Content -->
+            <!-- Footer -->
+            <footer class="clearfix">
+                <!--<div class="pull-right">-->
+                <!--Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://goo.gl/vNS3I" target="_blank">pixelcave</a>-->
+                <!--</div>-->
+                <div class="pull-left">
+                    <span id="year-copy"></span> &copy; <a href="http://www.siyosa-vn.com" target="_blank">Siyosa Co., Ltd.</a>
+                </div>
+            </footer>
+            <!-- END Footer -->
+        </div>
+        <!-- END Main Container -->
+    </div>
+    <!--Loading new -->
+    <div id="loading" style="display:none">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+                <div class="object" id="object_five"></div>
+                <div class="object" id="object_six"></div>
+                @*<div class="object" id="object_seven"></div>
+                    <div class="object" id="object_eight"></div>
+                    <div class="object" id="object_nine"></div>*@
+            </div>
+            <p>We are process Please wailt...</p>
+        </div>
+
+    </div>
+    <!-- END Page Container -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf8rjr4lVlKyCn5993cKyYsamXX8-0XI4&v=3.exp&sensor=false&libraries=drawing,geometry,places"></script>
+    <script src="~/Scripts/Tracking_js/markerclusterer.js"></script>
+    <script data-main="/Scripts/Tracking_js/main_1461518465" src="/Scripts/Tracking_js/require-jquery.js"></script>
+    <!--<link type="text/css" rel="stylesheet" href="../css/its.css"/>-->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,600">
+
+    <link href="~/Lib/960.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="../lib/960_gs/css/demo.css"/>-->
+    <link href="~/Lib/demo_table.css" rel="stylesheet" />
+    <link href="~/Content/CssCustomer.css" rel="stylesheet" />
+
+
+    <!-- Libraries -->
+    <!--<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="Lib/jquery/jquery-2.1.0.min.js"></script>-->
+    <script src="~/Lib/sprintf.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="~/Lib/jquery.dataTables.min.js"></script>
+    <script src="~/Lib/namespace.js"></script>
+    <script src="~/Scripts/Tracking_js/javascript_base64.js"></script>
+    <script src="~/Lib/util.js"></script>
+    <script src="~/Lib/display_fingerprints.js"></script>
+    <script src="~/Lib/OuiResolver.js"></script>
+    <script src="~/Scripts/Tracking_js/Tracking_siyosa.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Tracking_js/Group_device.js"></script>
+    <script src="~/Scripts/Script_system/menuScript.js"></script>
+    <script src="~/Tool_JS/js/ToolFunction.js"></script>
+<script src="~/Scripts/Script_system/TrackingDevice.js"></script>
+<script src="~/Scripts/Script_system/Rp_By_tracked.js"></script>
+    <script src="~/Scripts/Script_system/Rp_By_animation.js"></script>
+    <script src="~/Scripts/Script_system/Rp_By_group.js"></script>
+    <script src="~/Scripts/Script_system/Rp_Comparetrackedtag.js"></script>
+<script src="~/Scripts/Script_system/Rp_Simulation.js"></script>
+    <script src="~/Scripts/Script_system/GroupFindgprint.js"></script>
+</body>
+</html>
+

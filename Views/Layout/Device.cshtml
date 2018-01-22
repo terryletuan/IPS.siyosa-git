@@ -1,0 +1,135 @@
+﻿@*<div class="menu-main manager-device dispay_none" style=" padding-left: 20px; padding-right: 20px; background-color: #EAEDF1; margin-top:27px;">
+    <div class="col-md-12 text-center">
+        <h3 style="color:#0044aa; font-weight:bold">TRACED TAG MANAGEMENT</h3>
+    </div>
+    <div class="col-lg-12">
+        <div class="form-group">
+            <button type="button" class="btn btn-primary js-add-device"><i class="fa fa-plus-circle"></i>&nbsp;Add Device</button>
+        </div>
+    </div>
+    <div class="row groupdevice">
+        <div class="col-lg-12">
+            <div id="devices_table" class="table-responsive">
+                <div class="table-responsive">
+                    <div id="DataTables_Table_3_wrapper" class="dataTables_wrapper no-footer">
+
+                        <table id="DataTables_Table_1" class="dataTable no-footer table table-vcenter table-condensed table-bordered" role="grid" aria-describedby="DataTables_Table_1_info">
+                            <thead>
+                                <tr role="row">
+                                    <th> MAC </th>
+                                    <th> Tracked tag name </th>
+                                    <th>Belong to Group </th>
+                                    <th> Color </th>
+                                    <th> Battery status </th>
+                                    <th> Remarks </th>
+                                </tr>
+                            </thead>
+                            <tbody class="show-device-new">
+                            <tr>
+                                <td>VS0001</td>
+                                <td>Sam Sung</td>
+                                <td>ACB</td>
+                                <td>RED</td>
+                                <td>True</td>
+                                <td>ABC</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<div class="menu-main manager-device dispay_none" id="tab_0" style="background: white;">
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>TRACED TAG MANAGEMENT
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+
+            <form action="#" class="form-horizontal" enctype="multipart/form-data" method="post" role="form">
+                <div class="form-body row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-md-4"> Select tracked tag :</label>
+                            <div class="col-md-4">
+                                <input type="hidden" id="DeviceID" name="DeviceID" />
+                                <select class="form-control List-device"></select>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Add to Group :</label>
+                            <div class="col-md-4">
+                                <select class="form-control List-device-group"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Select color</label>
+                            <div class="col-md-4 color-main">
+                                <input type="text" class="form-control device-color" data-id="1" readonly="readonly"/>
+                                <ul class="list-unstyled main-color display-none">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Remarks :</label>
+                            <div class="col-md-4">
+                                <input type="text" maxlength="4000" class="form-control d-remarks"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-primary btn-device"><i class="fa fa-plus-circle"></i>Save</button>
+                                <button type="button" class="btn btn-danger btn-cleardevice"><i class="fa fa-plus-circle"></i>Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>List tracked tag management
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+            <table class="table table-hover table-bordered" id="data-device">
+                <thead>
+                    <tr>
+                        <th>Mac</th>
+                        <th>Tracked tag name</th>
+                        <th>Belong to group</th>
+                        <th>Color</th>
+                        <th>Battery status</th>
+                        <th>Remarks</th>
+                        <th>Option</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <!-- END FORM-->
+        </div>
+    </div>
+
+</div>
+<script src="~/Scripts/Script_system/Device.js"></script>
+@*<link href="~/css/style.css" rel="stylesheet" />*@

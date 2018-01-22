@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Tracking_hozaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Tracking_hozaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_Device" EntityType="Tracking_hozaModel.tb_Device" />
+    <EntitySet Name="tb_Group_device" EntityType="Tracking_hozaModel.tb_Group_device" />
+    <EntitySet Name="tb_User" EntityType="Tracking_hozaModel.tb_User" />
+    <EntitySet Name="tb_UserGroup" EntityType="Tracking_hozaModel.tb_UserGroup" />
+    <EntitySet Name="Tracking_Devices" EntityType="Tracking_hozaModel.Tracking_Devices" />
+  </EntityContainer>
+  <EntityType Name="tb_Device">
+    <Key>
+      <PropertyRef Name="Device_ID" />
+    </Key>
+    <Property Name="Device_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Device_mac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_Group" Type="Int32" />
+    <Property Name="Flag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tb_Group_device">
+    <Key>
+      <PropertyRef Name="ID_Group" />
+    </Key>
+    <Property Name="ID_Group" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mac_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Flag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tb_User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Id_group_user" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tb_UserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tracking_Devices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code_devices" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Name_device" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Lng" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Date_time" Type="DateTime" Precision="3" />
+    <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

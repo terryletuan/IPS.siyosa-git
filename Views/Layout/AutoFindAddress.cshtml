@@ -1,0 +1,33 @@
+﻿@using IndoorTracking.Common
+<div class="menu-main AutoFindAddress tab-pane active dispay_none" id="tab_0" style="background: white;">
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>Auto find
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form " style="height: 12000px">
+            <div id="mapautofind" class="col-md-8" style="height: 500px">
+
+            </div>
+            <div class="col-md-4 main-title-report">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="button" value="FIND SHORTCUT" class="btn btn-danger btn-autofind"/>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="button" value="Clear" class="btn btn-danger btn-autofind-clear" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        Total distance:  <label class="control-label totaldistanauto" style="font-size: 20px"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Script_system/AutoFind.js"></script>

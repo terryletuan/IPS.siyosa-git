@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Tracking_hozaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_Device">
+    <Key>
+      <PropertyRef Name="Device_ID" />
+    </Key>
+    <Property Name="Device_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Device_mac" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID_Group" Type="int" />
+    <Property Name="Flag" Type="varchar" MaxLength="50" />
+    <Property Name="Create_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_Group_device">
+    <Key>
+      <PropertyRef Name="ID_Group" />
+    </Key>
+    <Property Name="ID_Group" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mac_Group" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name_Group" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Flag" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tb_User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Id_group_user" Type="int" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="tb_UserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="Tracking_Devices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code_devices" Type="nvarchar" MaxLength="100" />
+    <Property Name="Name_device" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lat" Type="nvarchar" MaxLength="100" />
+    <Property Name="Lng" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_time" Type="datetime" />
+    <Property Name="Source" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="Tracking_hozaModelStoreContainer">
+    <EntitySet Name="tb_Device" EntityType="Self.tb_Device" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Group_device" EntityType="Self.tb_Group_device" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_User" EntityType="Self.tb_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_UserGroup" EntityType="Self.tb_UserGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tracking_Devices" EntityType="Self.Tracking_Devices" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

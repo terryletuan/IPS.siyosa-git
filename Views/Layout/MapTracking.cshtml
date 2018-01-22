@@ -1,0 +1,68 @@
+﻿@using IndoorTracking.Common
+@using IndoorTracking_DAL.Entity
+@{
+       indoortrackEntities _connect = new indoortrackEntities();
+        string username =  Command.GetUserCookie();
+        int idusergroup = _connect.tb_User.Single(p => p.Username.Equals(username)).Id_group_user.Value;
+        string permitionall = _connect.tb_UserGroup.First(p => p.ID == idusergroup).Permition;
+}
+
+    <div class="menu-main weareaboutnew" style="padding-left: 20px; padding-right: 20px; background-color: #EAEDF1; position: relative;">
+       @if (permitionall.Contains("ac_map"))
+       { 
+         <button type="button" class="btn btn-danger btn-zoom-maxmap" style="position: absolute; top: 69px; left: 148px; z-index: 500;">+</button>
+        <button type="button" class="btn btn-danger btn-zoom-minmap" style="position: absolute; top: 69px; left: 183px; z-index: 500;">-</button>
+        <div class="block full">
+            <div class="block-title">
+                <h4><strong>MOLD area</strong> Realtime Map </h4>
+                <div class="block-options pull-right">
+                    <a href="#" class="btn btn-alt btn-sm btn-primary js-full-screen"><i class="fa fa-desktop"></i></a>
+                </div>
+            </div>
+            <a id="_button-exit-fullscreen" class="btn btn-alt btn-sm btn-primary button-on-map-fullscreen" style="display: none" href="#"><i class="fa fa-desktop"></i> exit</a>
+            <!-- @*<div id="map_canvas2" class="block block-gmap" style="width: 100%; height: 480px"> -->
+
+            <!-- </div>*@ -->
+			<div id="map_canvas2" class="block block-gmap" style="width: 100%; height: 480px">
+
+            </div>
+            <!-- <div id="map_tracking" class="block block-gmap" style="width: 100%; height: 660px"> -->
+
+            <!-- </div> -->
+            <!-- <div id="map_tracking-realtime" class="block block-gmap dispay_none" style="width: 100%; height: 660px"> -->
+
+            <!-- </div> -->
+            <ul class="realtimeMapok" style="display: none">
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="block full">
+            <div class="block-title">
+                <h2>
+                    <strong>Devices</strong>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 main-table-tracking">
+                    <table class="dataTable no-footer table table-vcenter table-condensed table-bordered" id="tracking-device-table">                      
+                        <thead>
+                        <tr>
+                            <td>MAC</td>
+                            <td>Name</td>
+                            <td>Position</td>
+                            <td>Battery</td>
+                            <td>Last Seen</td>
+                            <td>Show/Hide</td>
+                        </tr>
+                        </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+</div>
+            </div>
+        </div>
+           <!-- end Weareabout new -->
+       }
+    </div>
+

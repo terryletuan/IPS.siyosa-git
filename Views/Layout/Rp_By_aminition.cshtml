@@ -1,0 +1,127 @@
+﻿@using IndoorTracking.Common
+<div class="menu-main bytrackedtagami tab-pane active dispay_none" id="tab_0" style="background: white;">
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>REPORT ANIMATION 
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+
+            <form action="#" class="form-horizontal" enctype="multipart/form-data" method="post" role="form">
+                <div class="form-body row">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Select tracked tag:</label>
+                        <div class="col-md-2">
+                            <select class="form-control bytrackedtag-deviceamini">
+                                <option>no device</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">From:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="fromdate_bytracked_tagami" placeholder="From">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-rptrackedtagami">Search</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Set animation timeline:</label>
+                        <div class="col-md-2">
+                            <input type="number" class="form-control numberanimation" value="1"/> <br/>
+                            <span>EX: number 1 is 1 seconds</span>
+                        </div>
+                        <label class="control-label col-md-2">To:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="Todate_bytrackedtagami" placeholder="To">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-exporttrackedami">Export</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                    <div class="form-group mainstopstart" style="display: none">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2"></div>
+
+                        <div class="col-md-2">
+                            <input type="button" class="btn btn-danger stop-animation" value="Stop animation" />
+                        </div>
+                        <div class="col-md-2">
+                            <input type="button" class="btn btn-danger start-animation" value="Start animation"/>
+                        </div>
+
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>Details Information:
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form "  style="height: 12000px">
+            <div id="mapanimation" class="col-md-12" style="height: 750px"></div>
+            <div class="col-md-12 main-title-report" id="mainexporttrackedami">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">HOYA LENS VIET NAM</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">APPLICATION: INDOOR TRACKING PEOPLE & ASSETV-1</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">REPORT BY SPECIFIED TRACKED TAG:</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label col-md-5">Use in used:</label>
+                                <label class="control-label col-md-7">@Command.GetUserCookie()</label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Check Time:</label>
+                                <label class="control-label col-md-7 datesystemami"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Specific time:</label>
+                                <label class="control-label col-md-7"><span class="fromdatetrackedami"></span>            <span class="todatetrackedami"></span></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Report for tracked tag:</label>
+                                <label class="control-label col-md-7 device-dpami"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Total distance:</label>
+                                <label class="control-label col-md-7 totaldistantrackedami"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Average speed:</label>
+                                <label class="control-label col-md-7 totalaveageami"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Total recorded points:</label>
+                                <label class="control-label col-md-7 totalpointami"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

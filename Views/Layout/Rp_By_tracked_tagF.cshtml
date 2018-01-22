@@ -1,0 +1,304 @@
+﻿@using IndoorTracking.Common
+<div class="menu-main bytrackedtagF tab-pane active dispay_none" id="tab_0" style="background: white;">
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>REPORT BY SPECIFIED TRACKED TAG 2
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+
+            <form action="#" class="form-horizontal" enctype="multipart/form-data" method="post" role="form">
+                <div class="form-body row">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Select tracked tag:</label>
+                        <div class="col-md-2">
+                            <select class="form-control bytrackedtag-device bytrackedtag-devicef">
+                                <option>no device</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">From:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="fromdate_bytracked_tagf" placeholder="From">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-rptrackedtagf">Search</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                        </div>
+                        <label class="control-label col-md-2">To:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="Todate_bytrackedtagf" placeholder="To">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-exporttrackedf">Export</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>Report Detail
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form " style="height: 12000px">
+            <div id="mapbttracked1" class="col-md-12" style="height: 500px">
+
+
+            </div>
+            <div class="col-md-12 main-title-report">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">HOYA LENS VIET NAM</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">APPLICATION: INDOOR TRACKING PEOPLE & ASSETV-1</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">REPORT BY SPECIFIED TRACKED TAG:</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label col-md-5">Use in used:</label>
+                                <label class="control-label col-md-7">@Command.GetUserCookie()</label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Check Time:</label>
+                                <label class="control-label col-md-7 datesystemf"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Specific time:</label>
+                                <label class="control-label col-md-7"><span class="fromdatetrackedf"></span>            <span class="todatetrackedf"></span></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Report for tracked tag:</label>
+                                <label class="control-label col-md-7 device-dpff"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Total distance:</label>
+                                <label class="control-label col-md-7 totaldistantrackedf"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Average speed:</label>
+                                <label class="control-label col-md-7 totalaveagef"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Total recorded points:</label>
+                                <label class="control-label col-md-7 totalpointf"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="dispay_none" id="mainexporttrackedf">
+                <table border="1">
+                    <tr>
+                        <td colspan="2">REPORT BY SPECIFIED TRACKED TAG:</td>
+                    </tr>
+                    <tr>
+                        <td>Use in used:</td>
+                        <td>@Command.GetUserCookie()</td>
+                    </tr>
+                    <tr>
+                        <td>Check Time:</td>
+                        <td class="datesystemf"></td>
+                    </tr>
+                    <tr>
+                        <td>Report for tracked tag:</td>
+                        <td class="device-dpf"></td>
+                    </tr>
+                    <tr>
+                        <td>Check history from:</td>
+                        <td class="fromdatetrackedf"></td>
+                    </tr>
+                    <tr>
+                        <td>Check history to:</td>
+                        <td class="todatetrackedf"></td>
+                    </tr>
+                    <tr>
+                        <td>Total distance:</td>
+                        <td class="totaldistantrackedf"></td>
+                    </tr>
+                    <tr>
+                        <td>Average speed:</td>
+                        <td class="totalaveagef"></td>
+                    </tr>
+                    <tr>
+                        <td>Total recorded points:</td>
+                        <td class="totalpointf"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu-main bytrackedtagF1 tab-pane active dispay_none" id="tab_0" style="background: white;">
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>REPORT BY SPECIFIED TRACKED TAG 3
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+
+            <form action="#" class="form-horizontal" enctype="multipart/form-data" method="post" role="form">
+                <div class="form-body row">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Select tracked tag:</label>
+                        <div class="col-md-2">
+                            <select class="form-control bytrackedtag-device bytrackedtag-devicef1">
+                                <option>no device</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">From:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="fromdate_bytracked_tagf1" placeholder="From">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-rptrackedtagf1">Search</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                        </div>
+                        <label class="control-label col-md-2">To:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="Todate_bytrackedtagf1" placeholder="To">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-exporttrackedf1">Export</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>Report Detail
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form " style="height: 12000px">
+            <div id="mapbttracked11" class="col-md-12" style="height: 500px">
+
+
+            </div>
+            <div class="col-md-12 main-title-report">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">HOYA LENS VIET NAM</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">APPLICATION: INDOOR TRACKING PEOPLE & ASSETV-1</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">REPORT BY SPECIFIED TRACKED TAG:</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label col-md-5">Use in used:</label>
+                                <label class="control-label col-md-7">@Command.GetUserCookie()</label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Check Time:</label>
+                                <label class="control-label col-md-7 datesystemf1"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Specific time:</label>
+                                <label class="control-label col-md-7"><span class="fromdatetrackedf1"></span>            <span class="todatetrackedf1"></span></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Report for tracked tag:</label>
+                                <label class="control-label col-md-7 device-dpff1"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Total distance:</label>
+                                <label class="control-label col-md-7 totaldistantrackedf1"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Average speed:</label>
+                                <label class="control-label col-md-7 totalaveagef1"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Total recorded points:</label>
+                                <label class="control-label col-md-7 totalpointf1"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="dispay_none" id="mainexporttrackedf1">
+                <table border="1">
+                    <tr>
+                        <td colspan="2">REPORT BY SPECIFIED TRACKED TAG:</td>
+                    </tr>
+                    <tr>
+                        <td>Use in used:</td>
+                        <td>@Command.GetUserCookie()</td>
+                    </tr>
+                    <tr>
+                        <td>Check Time:</td>
+                        <td class="datesystemf1"></td>
+                    </tr>
+                    <tr>
+                        <td>Report for tracked tag:</td>
+                        <td class="device-dpf1"></td>
+                    </tr>
+                    <tr>
+                        <td>Check history from:</td>
+                        <td class="fromdatetrackedf1"></td>
+                    </tr>
+                    <tr>
+                        <td>Check history to:</td>
+                        <td class="todatetrackedf1"></td>
+                    </tr>
+                    <tr>
+                        <td>Total distance:</td>
+                        <td class="totaldistantrackedf1"></td>
+                    </tr>
+                    <tr>
+                        <td>Average speed:</td>
+                        <td class="totalaveagef1"></td>
+                    </tr>
+                    <tr>
+                        <td>Total recorded points:</td>
+                        <td class="totalpointf1"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

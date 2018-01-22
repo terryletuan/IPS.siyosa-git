@@ -1,0 +1,83 @@
+﻿@using IndoorTracking.Common
+<div class="menu-main Rp_logtime tab-pane active dispay_none" id="tab_0" style="background: white;">
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>REPORT SMART TAG - STATUS REALTIME
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+
+            <form action="#" class="form-horizontal" enctype="multipart/form-data" method="post" role="form">
+                <div class="form-body row">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Select tracked tag:</label>
+                        <div class="col-md-2">
+                            <select class="form-control Rp_logtime-device">
+                                <option>no device</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">From:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="fromdate_Rp_logtime" placeholder="From">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-Rp_logtime">Search</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                        </div>
+                        <label class="control-label col-md-2">To:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="Todate_Rp_logtime" placeholder="To">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-Rp_logtime">Export</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>Report Detail
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form " style="height: 12000px">
+            <div class="col-md-12 main-title-report">
+                <table class="table" id="rplogtime">
+                    <thead>
+                        <tr>
+                            <th>Tracked tag</th>
+                            <th>Belong to Group</th>
+                            <th>Description</th>
+                            <th>Tracked date</th>
+                            <th>Tracked time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,153 @@
+﻿
+<div class="menu-main Fingerprints dispay_none" style="background-color:white;margin-top: 10px;">
+    <div class="container_12">
+
+        <!-- Header -->
+        <div id="header" class="grid_12 alpha">
+            <h1>
+                <img src="~/img/SiYoSa-Logo.png" alt="Siyosa logo" width="30" /> Finferprint database & Improvement tool
+                @*<img id="global_spinner" alt="loading" src="~/img/input-spinner.gif" width="50" />*@
+            </h1>
+            <!--<div class="clear"></div>-->
+            <div id="login_box">
+                <div class="row">
+                    <div class="col-md-2">
+                        <input id="username" type="text" class="form-control" placeholder="username" value="" />
+                    </div>
+                    <div class="col-md-2">
+                        <input id="password" type="password" class="form-control" placeholder="password" value="" />
+                    </div>
+                    <div class="col-md-2">
+                        <input id="site_id" type="text" class="form-control" placeholder="site ID" value="" />
+                    </div>
+                    <div class="col-md-2">
+                        <button id="fetch_fps" class="btn btn-danger">Show</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="showfingprint" class="btn btn-danger">Show Delete Fin</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="downloadfingerprint" class="btn btn-danger">Download Fin</button>
+                    </div>
+                </div>
+                <div class="row displayfingerprint" style="margin-top:10px; height:350px; overflow:auto;display:none">
+                    <h4 style="text-align:center; color:red; font-weight:bold">Delete Fingerprint</h4>
+                    <p style="text-align:center"><button id="deleteallfingprint" class="btn btn-danger">Delete All</button></p>
+                    <table class="table" style="width: 98%; margin:0 auto;">
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>MAC</th>
+                                <th>Lat</th>
+                                <th>Lng</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody class="showfingerprint">
+                            <tr style="text-align:center; height:50px; font-size:20px"><th colspan="5"> Server not Data, below is data test </th></tr>
+                            <tr class="clearprint">
+                                <td>1</td>
+                                <td>WCPL89OLP332</td>
+                                <td>10.2545874</td>
+                                <td>-10.2542124</td>
+                                <td><button class="js-delete btn btn-alt btn-primary" onclick="_deleteFin(this,1)"><i class="fa fa-trash-o"></i></button></td>
+                            </tr>
+                            <tr class="clearprint">
+                                <td>1</td>
+                                <td>WCPL89OLP332</td>
+                                <td>10.2545874</td>
+                                <td>-10.2542124</td>
+                                <td><button class="js-delete btn btn-alt btn-primary" onclick="_deleteFin(this,1)"><i class="fa fa-trash-o"></i></button></td>
+                            </tr>
+                            <tr class="clearprint">
+                                <td>1</td>
+                                <td>WCPL89OLP332</td>
+                                <td>10.2545874</td>
+                                <td>-10.2542124</td>
+                                <td><button class="js-delete btn btn-alt btn-primary" onclick="_deleteFin(this,1)"><i class="fa fa-trash-o"></i></button></td>
+                            </tr>
+                            <tr class="clearprint">
+                                <td>1</td>
+                                <td>WCPL89OLP332</td>
+                                <td>10.2545874</td>
+                                <td>-10.2542124</td>
+                                <td><button class="js-delete btn btn-alt btn-primary" onclick="_deleteFin(this,1)"><i class="fa fa-trash-o"></i></button></td>
+                            </tr>
+                            <tr class="clearprint">
+                                <td>1</td>
+                                <td>WCPL89OLP332</td>
+                                <td>10.2545874</td>
+                                <td>-10.2542124</td>
+                                <td><button class="js-delete btn btn-alt btn-primary" onclick="_deleteFin(this,1)"><i class="fa fa-trash-o"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--<input id="level_id" type="text" placeholder="levelID or blank" value=""/>-->
+
+            </div>
+            @*<p id="status">
+                <!--Leave 'levelId' blank to fetch data from all the levels in a site-->
+            </p>*@
+            Available Levels:
+            <select id="site_levels" class="form-control"></select>
+
+        </div>
+
+        <!-- Left pane: Google Map -->
+        <div id="left_pane" class="grid_6 alpha">
+            <div>
+                Map size:
+                <a href="#" id="map_size">enlarge</a>
+            </div>
+            <div id="map"></div>
+
+            <div id="map_control">
+                <strong>Markers:&nbsp;</strong>
+                <label for="marker_size">Size:</label>
+                <input id="marker_size" value="" />
+                <label for="marker_opacity">Opacity (0-1):</label>
+                <input id="marker_opacity" value="" />
+                <label for="marker_border">Border:</label>
+                <input id="marker_border" value="" />
+                <button id="update_markers">Update</button>
+            </div>
+
+        </div>
+
+        <!-- Right Pane: UI Controls -->
+        <div id="right_pane" class="grid_6 omega">
+
+            <div>
+                <h2>Show aggregated metrics <span id="num_aps"></span></h2>
+                <input id="rssMax" type="checkbox" />Max RSS value
+            </div>
+            <div>
+                <h2>Show single APs values</h2>
+                <!-- AP table -->
+                <div id="ap_table_pane">
+                    <table id="ap_table">
+                        <thead>
+                            <tr>
+                                <th>MAC</th>
+                                <th>Mfr</th>
+                                <th>Max</th>
+                                <th>Min</th>
+                                <th>Delta</th>
+                                <th>Points</th>
+                                <th>Show</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="stations_container">
+                    <h2>Devices used for fingerprinting:</h2>
+                    <div id="stations"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Tracking_hozaModelStoreContainer" CdmEntityContainer="Tracking_hozaEntities">
+    <EntitySetMapping Name="tb_Device">
+      <EntityTypeMapping TypeName="Tracking_hozaModel.tb_Device">
+        <MappingFragment StoreEntitySet="tb_Device">
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="ID_Group" ColumnName="ID_Group" />
+          <ScalarProperty Name="Device_mac" ColumnName="Device_mac" />
+          <ScalarProperty Name="Device_ID" ColumnName="Device_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Group_device">
+      <EntityTypeMapping TypeName="Tracking_hozaModel.tb_Group_device">
+        <MappingFragment StoreEntitySet="tb_Group_device">
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name_Group" ColumnName="Name_Group" />
+          <ScalarProperty Name="Mac_Group" ColumnName="Mac_Group" />
+          <ScalarProperty Name="ID_Group" ColumnName="ID_Group" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_User">
+      <EntityTypeMapping TypeName="Tracking_hozaModel.tb_User">
+        <MappingFragment StoreEntitySet="tb_User">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Id_group_user" ColumnName="Id_group_user" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_UserGroup">
+      <EntityTypeMapping TypeName="Tracking_hozaModel.tb_UserGroup">
+        <MappingFragment StoreEntitySet="tb_UserGroup">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tracking_Devices">
+      <EntityTypeMapping TypeName="Tracking_hozaModel.Tracking_Devices">
+        <MappingFragment StoreEntitySet="Tracking_Devices">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Date_time" ColumnName="Date_time" />
+          <ScalarProperty Name="Lng" ColumnName="Lng" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Name_device" ColumnName="Name_device" />
+          <ScalarProperty Name="Code_devices" ColumnName="Code_devices" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

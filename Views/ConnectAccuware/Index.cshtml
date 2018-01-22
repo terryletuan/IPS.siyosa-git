@@ -1,0 +1,524 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Connect Accuware</title>
+    <script src="~/Lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="~/Scripts/Tracking_js/javascript_base64.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container text-center custom-main">
+        <div class="row">
+            <h3>Connecting to Server</h3>
+        </div>
+    </div>
+
+    <script>
+        var timer = 2000,
+            keycheck = 0,
+            keycheck1 = 0,
+            keycheck2 = 0,
+            runtimer = null,
+            runtimer1 = null,
+            runtimer2 = null,
+            datadistan = [],
+            datalatlng = [],
+            datadistan1 = [],
+            datalatlng1 = [],
+            datadistan2 = [],
+            datalatlng2 = [],
+            DataPrint,
+            DatacheckDevice = [],
+            arrayMail = [],
+            keyrun = 0,
+            keyStart = 0,
+            _authorizationBase64,
+            //_username = "hoya@siyosa-vn.com",
+            //_password = "holv*#2016";
+            //_site = 1696;
+            _username = "terry@accuware.com",
+            _password = "siyosa#123";
+        $(document).ready(function () {
+
+            //get data fingerprint
+            getfindprint();
+            getListDeviceDefault();
+            _CurrentDateClinet();
+            runtimer = setInterval(autoConnectServer, timer, 0);
+            //$(".btn-connect").click(function () {
+
+            //    var _this = $(this), _value;
+            //    _value = _this.val();
+            //    if (_value == "Start Connect") {
+            //        _this.val("Stop Connect");
+            //        _this.removeClass("btn-danger");
+            //        _this.addClass("btn-success");
+
+            //        //bin get dataserver
+            //        runtimer = setInterval(autoConnectServer, timer, 0);
+            //    }
+            //    else {
+            //        _this.val("Start Connect");
+            //        _this.addClass("btn-danger");
+            //        _this.removeClass("btn-success");
+            //    }
+            //})
+
+        });
+
+        function getListDeviceDefault() {
+            var url = "https://navimote2.navizon.com/api/v1/sites/1770/devices?with=udo,status";
+            _authorizationBase64 = Base64.encode(_username + ':' + _password);
+            $.ajax({
+                type: 'GET',
+                url: url,
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", "Basic " + _authorizationBase64);
+                },
+                success: function (result) {
+                    $.each(result, function (k, v) {
+                        if (v.position) {
+                            var latlng = v.position.lat + "-" + v.position.lng;
+                            var obj = new Object();
+                            obj.mac = v.mac;
+                            obj.latlng = latlng;
+                            DatacheckDevice.push(obj);
+                        }
+                    });
+                }
+            });
+        }
+
+        function autoConnectServer() {
+
+           var url = "https://navimote2.navizon.com/api/v1/sites/1770/devices?with=udo,status";
+            _authorizationBase64 = Base64.encode(_username + ':' + _password);
+            $.ajax({
+                type: 'GET',
+                url: url,
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", "Basic " + _authorizationBase64);
+                },
+                success: function (result) {
+                    $.each(result, function(k, v) {
+                        if (v.position) {
+                            if (v.position.source === "n3" || v.position.source === "INDOORS/N3") {
+                                var latlng = v.position.lat + "-" + v.position.lng;
+                                var time = _getTimpans(v.position.fixed_at, v.current_server_time);
+                                if (checkDevicePoint(v.mac, latlng) === true) {
+                                    var latlngok = getFindgprint(v.position.lat, v.position.lng);
+                                    var latlngsplit = latlngok.split("-");
+                                    $.getJSON("/ConnectAccuware/_SaveDataFromServer", { mac: v.mac, name: v.udo.name, lat: latlngsplit[0], lng: latlngsplit[1], battery: v.device_status.battery, source: v.position.source, Current_date: _CurrentDateClinet(), idf: parseInt(latlngsplit[2]) }, function (data) {
+                                        if (data !== "" || data !== null) {
+                                            console.log("Toado Divece:" + v.position.lat + "-" + v.position.lng);
+                                            console.log("Save success Toado Finger:" + latlngsplit[0] + "-" + latlngsplit[1]);
+                                        } else {
+                                            console.log("Save fai");
+                                        }
+                                    });
+                                } else {// check thiết bị đứng yên 5 lần thì lưu thông báo database;
+                                    if (time > 360 && time <= 370) {
+                                        SaveSendLastseen(v.mac, time); // lưu thông báo thiết bị đã hoạt động trở lại
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+
+        // luu thiet bi đã di chuyễn
+        function SaveSendLastseen(mac, time) {
+            $.getJSON("/ConnectAccuware/SaveSendLastseen", { mac: mac, Current_date: time }, function (data) {
+                if (data !== "" || data != null) {
+                    console.log("Save ok Save Send Lastseen");
+                } else {
+                    console.log("Save fai Save Send Lastseen");
+                }
+            });
+        }
+
+        function checkDevicePoint(mac, latlng) {
+            var key = false;
+            $.each(DatacheckDevice, function(k, v) {
+                if (v.mac === mac) {
+                    if (latlng !== v.latlng) {
+                        v.latlng = latlng;
+                        key = true;
+                    }
+                    return false;
+                }
+            });
+            return key;
+        }
+
+        function _Showdevice() {
+            url = "https://navimote2.navizon.com/api/v1/sites/1770/devices/WBO05Y5RI989/status/";
+            _authorizationBase64 = Base64.encode(_username + ':' + _password);
+            $.ajax({
+                type: 'GET',
+                url: url,
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", "Basic " + _authorizationBase64);
+                },
+                success: function (result) {
+                    if (result.position)
+                    {
+                        if (result.position.source === "n3" || result.position.source === "INDOORS/N3") {
+                            var latlngok = getKMfingerprint(result.position.lat, result.position.lng, "WBO05Y5RI989");
+                            var latlngsplit = latlngok.split("-");
+                            var latlng = latlngsplit[0] + latlngsplit[1];
+                            if (latlng != keycheck) {
+                                keycheck = latlng;
+                                $.getJSON("/ConnectAccuware/_SaveDataFromServer", { mac: "WBO05Y5RI989", name: "Zend", lat: latlngsplit[0], lng: latlngsplit[1], battery: result.device_status.battery, source: result.position.source, Current_date: _CurrentDateClinet() }, function (data) {
+                                    if (data != "" || data != null) {
+                                        console.log("Toado Divece:" + result.position.lat + "-" + result.position.lng);
+                                        console.log("Save success Toado Finger:" + latlngsplit[0] + "-" + latlngsplit[1]);
+                                    }
+                                    else {
+                                        console.log("Save fai");
+                                    }
+                                });
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function _Showdevice2() {
+            url = "https://navimote2.navizon.com/api/v1/sites/1770/devices/W8GMK22PMO47/status/";
+            _authorizationBase64 = Base64.encode(_username + ':' + _password);
+            $.ajax({
+                type: 'GET',
+                url: url,
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", "Basic " + _authorizationBase64);
+                },
+                success: function (result) {
+                    if (result.position)
+                    {
+                        if (result.position.source === "n3" || result.position.source === "INDOORS/N3") {
+                            var latlngok = getKMfingerprint(result.position.lat, result.position.lng, "W8GMK22PMO47");
+                            var latlngsplit = latlngok.split("-");
+                            var latlng = latlngsplit[0] + latlngsplit[1];
+                            if (latlng != keycheck1) {
+                                keycheck1 = latlng;
+                                $.getJSON("/ConnectAccuware/_SaveDataFromServer", { mac: "W8GMK22PMO47", name: "ss5", lat: latlngsplit[0], lng: latlngsplit[1], battery: result.device_status.battery, source: result.position.source, Current_date: _CurrentDateClinet() }, function (data) {
+                                    if (data != "" || data != null) {
+                                        console.log("Toado Divece:" + result.position.lat + "-" + result.position.lng);
+                                        console.log("Save success Toado Finger:" + latlngsplit[0] + "-" + latlngsplit[1]);
+                                    }
+                                    else {
+                                        console.log("Save fai");
+                                    }
+                                });
+                            };
+                        }
+
+                    }
+                }
+            });
+        }
+
+        function _Showdevice3() {
+            url = "https://navimote2.navizon.com/api/v1/sites/1770/devices/W7Y26MQ3KFAL/status/";
+            _authorizationBase64 = Base64.encode(_username + ':' + _password);
+            $.ajax({
+                type: 'GET',
+                url: url,
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", "Basic " + _authorizationBase64);
+                },
+                success: function (result) {
+                    if (result.position) {
+                        if (result.position.source === "n3" || result.position.source === "INDOORS/N3") {
+                            var latlngok = getKMfingerprint(result.position.lat, result.position.lng, "W7Y26MQ3KFAL");
+                            var latlngsplit = latlngok.split("-");
+                            var latlng = latlngsplit[0] + latlngsplit[1];
+                            if (latlng != keycheck2) {
+
+                                $.getJSON("/ConnectAccuware/_SaveDataFromServer", { mac: "W7Y26MQ3KFAL", name: "zen 6", lat: latlngsplit[0], lng: latlngsplit[1], battery: result.device_status.battery, source: result.position.source, Current_date: _CurrentDateClinet() }, function (data) {
+                                    if (data != "" || data != null) {
+                                        keycheck2 = latlng;
+                                        console.log("Toado Divece:" + result.position.lat + "-" + result.position.lng);
+                                        console.log("Save zend6 Finger:" + latlngsplit[0] + "-" + latlngsplit[1]);
+                                    }
+                                    else {
+                                        console.log("Save fai");
+                                    }
+                                });
+                            };
+                        }
+                    }
+                }
+            });
+        }
+
+        function getfindprint()
+        {
+            $.when(_GetAccuweare("http://its.navizon.com/api/v1/sites/1770/levels/0/fingerprints/")).done(function (data) {
+
+                if(data != "")
+                {
+                    console.log(data);
+
+                    DataPrint = data;
+                    console.log(DataPrint);
+
+                }
+            })
+        }
+
+        //function get, post, pust, delete accuweare
+        function _GetAccuweare(url) {
+            _authorizationBase64 = Base64.encode(_username + ':' + _password);
+            return $.ajax({
+                type: 'GET',
+                url: url,
+                async: false,
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", "Basic " + _authorizationBase64);
+                }
+            });
+        }
+
+        //ngung slider
+        function _StopGet() {
+            if (runtimer) {
+                clearInterval(runtimer);
+            }
+        };
+
+        function _StopGet1() {
+            if (runtimer1) {
+                clearInterval(runtimer1);
+            }
+        };
+        function _StopGet2() {
+            if (runtimer2) {
+                clearInterval(runtimer2);
+            }
+        };
+        function _CurrentDateClinet() {
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+
+            return yyyy + '-' + mm + '-' + dd + " " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+
+        };
+
+        function  getKMfingerprint(lat,lng, divece)
+        {
+            var latlngok = "";
+            //clear value befor scan
+            if (divece == "W7Y26MQ3KFAL") // may cuong
+            {
+                datadistan = [];
+                datalatlng = [];
+            }
+            else if (divece == "W8GMK22PMO47") // sam sung
+            {
+                datadistan1 = [];
+                datalatlng1 = [];
+            }
+            else if (divece == "WBO05Y5RI989") // zen phone
+            {
+                datadistan2 = [];
+                datalatlng2 = [];
+            }
+
+            $.each(DataPrint, function (p, pp) {
+                var distan = getDistanceFromLatLonInKm(lat, lng, pp.lat, pp.lng);
+                var latlng = pp.lat + "-" + pp.lng;
+                if (divece == "W7Y26MQ3KFAL") // may cuong
+                {
+                    datadistan.push(distan);
+                    datalatlng.push(latlng);
+                }
+                else if (divece == "W8GMK22PMO47") // sam sung
+                {
+                    datadistan1.push(distan);
+                    datalatlng1.push(latlng);
+                }
+                else if (divece == "WBO05Y5RI989") // zen phone
+                {
+                    datadistan2.push(distan);
+                    datalatlng2.push(latlng);
+                }
+
+            });
+
+            if (divece == "W7Y26MQ3KFAL") // may cuong
+            {
+                //return lat,lng fingerprint,
+                var min = Math.min.apply(null, datadistan);
+                var positionll = datadistan.indexOf(min);
+                latlngok = datalatlng[positionll];
+            }
+            else if (divece == "W8GMK22PMO47") // sam sung
+            {
+                var min = Math.min.apply(null, datadistan1);
+                var positionll = datadistan1.indexOf(min);
+                latlngok = datalatlng1[positionll];
+            }
+            else if (divece == "WBO05Y5RI989") // zen phone
+            {
+                var min = Math.min.apply(null, datadistan2);
+                var positionll = datadistan2.indexOf(min);
+                latlngok = datalatlng2[positionll];
+            }
+
+            return latlngok;
+        }
+
+        // get distance from google maps
+        function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+            var R = 6371; // Radius of the earth in km
+            var dLat = deg2rad(lat2 - lat1);  // deg2rad below
+            var dLon = deg2rad(lon2 - lon1);
+            var a =
+              Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+              Math.sin(dLon / 2) * Math.sin(dLon / 2)
+            ;
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            var d = R * c; // Distance in km
+            return d;
+        }
+
+        function deg2rad(deg) {
+            return deg * (Math.PI / 180)
+        }
+
+        function getFindgprint(lat, lng) {
+            var totaldistan = [],
+                keylatlan = [];
+
+            $.each(DataPrint, function (p, pp) {
+                var distan = getDistanceFromLatLonInKm(lat, lng, pp.lat, pp.lng);
+                var latlng = pp.lat + "-" + pp.lng + "-" + pp.id;
+                totaldistan.push(distan);
+                keylatlan.push(latlng);
+            });
+
+            //tinh maxmin
+            var min = Math.min.apply(null, totaldistan);
+            var positionll = totaldistan.indexOf(min);
+            return keylatlan[positionll];
+        };
+
+        //convert time from timespan to date
+        function _getTimpans(date, date1) {
+
+            // Set the unit values in milliseconds.
+            var msecPerMinute = 1000 * 60;
+            var msecPerHour = msecPerMinute * 60;
+            var msecPerDay = msecPerHour * 24;
+
+            //convert time server
+            var myDate = new Date(date * 1000);
+            var myDate1 = new Date(date1 * 1000);
+            var format = new Date(myDate);
+            var format1 = new Date(myDate1);
+            var m = format.getFullYear(), t = format.getMonth() + 1, n = format.getDate(), h = format.getHours(), p = format.getMinutes(), g = format.getSeconds(),
+                m1 = format1.getFullYear(), t1 = format1.getMonth() + 1, n1 = format1.getDate(), h1 = format1.getHours(), p1 = format1.getMinutes(), g1 = format1.getSeconds();
+            if (m < 10)
+                m = '0' + m;
+            if (t < 10)
+                t = '0' + t;
+            if (n < 10)
+                n = '0' + n;
+            if (h < 10)
+                h = '0' + h;
+            if (p < 10)
+                p = '0' + p;
+            if (g < 10)
+                g = '0' + g;
+
+            if (m1 < 10)
+                m1 = '0' + m1;
+            if (t1 < 10)
+                t1 = '0' + t1;
+            if (n1 < 10)
+                n1 = '0' + n1;
+            if (h1 < 10)
+                h1 = '0' + h1;
+            if (p1 < 10)
+                p1 = '0' + p1;
+            if (g1 < 10)
+                g1 = '0' + g1;
+            // Set a date and get the milliseconds
+            var ok1 = t + "/" + n + "/" + m + " " + h + ":" + p + ":" + g;
+            var ok2 = t1 + "/" + n1 + "/" + m1 + " " + h1 + ":" + p1 + ":" + g1;
+            var date = new Date(ok1);
+            var date1 = new Date(ok2);
+            var interval = date1.getTime() - date.getTime();
+
+            //var days = Math.floor(interval / msecPerDay);
+            //interval = interval - (days * msecPerDay);
+
+            //// Calculate the hours, minutes, and seconds.
+            //var hours = Math.floor(interval / msecPerHour);
+            //interval = interval - (hours * msecPerHour);
+
+            //var minutes = Math.floor(interval / msecPerMinute);
+            //interval = interval - (minutes * msecPerMinute);
+
+            //var seconds = Math.floor(interval / 1000);
+
+            //// Display the result.
+            //if (days != 0)
+            //    return days + "d" + hours + "h" + minutes + "m" + seconds + "s" + " ago";
+            //else if (hours != 0)
+            //    return hours + "h" + minutes + "m" + seconds + "s" + " ago";
+            //else if (minutes != 0)
+            //    return minutes + "m" + seconds + "s" + " ago";
+            //else if (seconds != 0)
+            //    return seconds + "s" + " ago";
+            //else
+            //    return "0s ago";
+            return Math.floor(interval / 1000);
+        };
+    </script>
+
+    <style>
+        .custom-main {
+            text-align: center;
+            border: 1px solid #867C7C;
+            border-radius: 10px;
+        }
+
+        .margin-bottom-10 {
+            margin-bottom: 10px;
+        }
+
+        .btn-conect-cs {
+            width: 200px;
+            height: 50px;
+            font-size: 23px;
+        }
+    </style>
+</body>
+</html>

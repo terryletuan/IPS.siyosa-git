@@ -1,0 +1,189 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Connect Accuware</title>
+    <script src="~/Lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="~/Scripts/Tracking_js/javascript_base64.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=drawing,geometry,places"></script>
+</head>
+<body>
+    <div class="container text-center custom-main">
+        <div class="row">
+            <h3>Connect Database Accuware</h3>
+        </div>
+        <div id="map_canvas" style="height:300px; width:100%;">
+
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fingerprint Infor Lat,Lng</h4>
+                    </div>
+                    <div class="modal-body inforfingerprint">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>MAC</th>
+                                    <th>Lat</th>
+                                    <th>Lng</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody class="showfingerprint"></tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var timer = 1000,
+            keycheck = 0,
+            keycheck1 = 0,
+            runtimer = null,
+            runtimer1 = null,
+            lat, map;
+        $(document).ready(function () {
+                initialize();
+                //_deleteFin();
+                $("#myModal").modal();
+        });
+
+        //get fingerprint
+        function _deleteFin() {
+            var _authorizationBase64, _username = "Tuan.lequoc@siyosa.net", _password = "",
+            url = "https://its.navizon.com/api/v1/sites/1566/levels/0/fingerprints/306/";
+            _authorizationBase64 = Base64.encode(_username + ':' + _password);
+            $.ajax({
+                type: 'DELETE',
+                url: url,
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", "Basic " + _authorizationBase64);
+                },
+                success: function (result) {
+                    console.log(result);
+                }
+            });
+        }
+
+        //init của report map
+        function initialize() {
+            mapOptions = {
+                zoom: 14,
+                center: new google.maps.LatLng(10.806068, 106.731191),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                tilt: 0,
+                scaleControl: true
+            };
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        };
+
+        function addFloorlan(url) {
+            // Set new one
+            _kmlLayer = new google.maps.KmlLayer({
+                clickable: false,
+                map: map,
+                suppressInfoWindows: true,
+                url: url
+            });
+            //_kmlLayer.setMap(map);
+        }
+
+
+        var a = "aaaa", b = "bbbbb";
+        function Whendo()
+        {
+            $.when(a, b).done(function (respone, respone1) {
+
+                console.log(respone + respone1);
+
+            })
+        }
+
+        function Whendo1() {
+            $.when(_Showdevice()).done(function (respone) {
+
+                console.log(respone);
+
+            })
+        }
+
+        function _Showdevice() {
+            var _authorizationBase64, _username = "Tuan.lequoc@siyosa.net", _password = "",
+            url = "https://navimote2.navizon.com/api/v1/sites/1566/devices/WBO05Y5RI989/status/";
+            _authorizationBase64 = Base64.encode(_username + ':' + _password);
+             return $.ajax({
+                type: 'GET',
+                url: url,
+                async: false,
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", "Basic " + _authorizationBase64);
+                }
+            });
+        }
+
+        function _Showdevice2() {
+            var _authorizationBase64, _username = "Tuan.lequoc@siyosa.net", _password = "",
+            url = "https://navimote2.navizon.com/api/v1/sites/1566/devices/WAHTZVCM7CM3/status/";
+            _authorizationBase64 = Base64.encode(_username + ':' + _password);
+            $.ajax({
+                type: 'GET',
+                url: url,
+                async: false,
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Authorization", "Basic " + _authorizationBase64);
+                }
+            });
+        }
+
+        //ngung slider
+        function _StopGet() {
+            if (runtimer) {
+                clearInterval(runtimer);
+            }
+        };
+
+        function _StopGet1() {
+            if (runtimer1) {
+                clearInterval(runtimer1);
+            }
+        };
+    </script>
+
+    <style>
+        .custom-main {
+            text-align: center;
+            border: 1px solid #867C7C;
+            border-radius: 10px;
+        }
+
+        .margin-bottom-10 {
+            margin-bottom: 10px;
+        }
+
+        .btn-conect-cs {
+            width: 200px;
+            height: 50px;
+            font-size: 23px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿@using IndoorTracking.Common
+<div class="menu-main Rp_Simulation tab-pane active dispay_none" id="tab_0" style="background: white;">
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>Report Simulation
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form "  style="height: 12000px">
+            <div id="mapSimulation" class="col-md-6" style="height: 500px">
+
+            </div>
+            <div class="col-md-6 main-title-report">
+                @*<table class="table" id="data-simulation">
+                    <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Start point</th>
+                        <th>End point</th>
+                        <th>Distan</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="2">Total Distan</td>
+                        <td colspan="2"> <span class="totaldistansimulation"></span></td>
+                    </tr>
+                    </tfoot>
+                </table>*@
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="button" value="CALCULATE" class="btn btn-danger btn-simulationnew"/>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label totaldistannew" style="font-size: 20px"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="table" id="data-simulationnew" style="display: none">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Lat</th>
+                                <th>Lng</th>
+                                <th>ID findgprint</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

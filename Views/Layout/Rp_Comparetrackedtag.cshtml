@@ -1,0 +1,169 @@
+﻿@using IndoorTracking.Common
+<div class="menu-main Rp_Comparetrackedtag tab-pane active dispay_none" id="tab_0" style="background: white;">
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>COMPARE 2 SPECIFIED TRACKED TAG
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <!-- BEGIN FORM-->
+
+            <form action="#" class="form-horizontal" enctype="multipart/form-data" method="post" role="form">
+                <div class="form-body row">
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Tracked tag 1:</label>
+                        <div class="col-md-2">
+                            <select class="form-control comparetracked-device1">
+                                <option>device 1</option>
+                                <option>device 2</option>
+                                <option>device 3</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">From:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="FromdateCompare" placeholder="From">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-rpcompareok">Search</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Tracked tag 2:</label>
+                        <div class="col-md-2">
+                            <select class="form-control comparetracked-device2">
+                                <option>device 1</option>
+                                <option>device 2</option>
+                                <option>device 3</option>
+                            </select>
+                        </div>
+                        <label class="control-label col-md-2">To:</label>
+                        <div class="col-md-3">
+                            <input type="datetime-local" class="form-control " id="TodateCompare" placeholder="To">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-exportcompare">Export</button>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <!-- END FORM-->
+        </div>
+    </div>
+
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>Report Detail COMPARE 2 SPECIFIED TRACKED TAG
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form" style="height: 1200px">
+            <div id="mapComparetrackedtag" class="col-md-12" style="height: 500px">
+
+            </div>
+            <div class="col-md-12  main-title-report" >
+                <table class="table">
+                    <tr>
+                        <td>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">HOYA LENS VIET NAM</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">APPLICATION: INDOOR TRACKING PEOPLE & ASSETV-1</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label">REPORT BY SPECIFIED COMPARE TRACKED TAG:</label>
+                            </div>
+                            <div class="form-group row dispay_none">
+                                <label class="control-label col-md-5">Use in used:</label>
+                                <label class="control-label col-md-7">@Command.GetUserCookie()</label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-6">Check Time:</label>
+                                <label class="control-label col-md-6 datesystemcom"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-6">Specific time:</label>
+                                <label class="control-label col-md-6"><span class="fromdatetrackedcom"></span>            <span class="todatetrackedcom"></span></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-6">Report for tracked tag:</label>
+                                <label class="control-label col-md-6 "><span class="devicetracked1"> </span>            <span class="devicetracked2"></span></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-6">Total distance tracked tag 1:</label>
+                                <label class="control-label col-md-6 totaldistantrackedcom1"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-6">Total distance tracked tag 2:</label>
+                                <label class="control-label col-md-6 totaldistantrackedcom2"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-6">Average speed tracked tag 1:</label>
+                                <label class="control-label col-md-6 totalaveagecom1"></label>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-6">Average speed tracked tag 2:</label>
+                                <label class="control-label col-md-6 totalaveagecom2"></label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="dispay_none" id="mainreportcompare">
+                <table border="1">
+                    <tr>
+                        <td colspan="2">COMPARE 2 SPECIFIED TRACKED TAGS:</td>
+                    </tr>
+                    <tr>
+                        <td>Use in used:</td>
+                        <td>@Command.GetUserCookie()</td>
+                    </tr>
+                    <tr>
+                        <td>Check Time:</td>
+                        <td class="datesystemcom"></td>
+                    </tr>
+                    <tr>
+                        <td>Report for tracked tag:</td>
+                        <td><span class="devicetracked1"> </span>  And <span class="devicetracked2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Check history from:</td>
+                        <td class="fromdatetrackedcom"></td>
+                    </tr>
+                    <tr>
+                        <td>Check history to:</td>
+                        <td class="todatetrackedcom"></td>
+                    </tr>
+                    <tr>
+                        <td>Total distance of <span class="devicetracked1"> </span></td>
+                        <td class="totaldistantrackedcom1"></td>
+                    </tr>
+                    <tr>
+                        <td>Total distance of <span class="devicetracked2"> </span></td>
+                        <td class="totaldistantrackedcom2"></td>
+                    </tr>
+                    <tr>
+                        <td>Average speed of <span class="devicetracked1"> </span></td>
+                        <td class="totalaveagecom1"></td>
+                    </tr>
+                    <tr>
+                        <td>Average speed of <span class="devicetracked2"> </span></td>
+                        <td class="totalaveagecom2"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+

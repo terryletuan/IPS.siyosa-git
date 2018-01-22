@@ -1,0 +1,105 @@
+﻿@using IndoorTracking.Common
+<div class="menu-main GroupFindgprint tab-pane active dispay_none" id="tab_0" style="background: white;">
+    <div class="portlet">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>Set group findgprint 
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form " style="height: 12000px">
+            <div id="mapGroupFindgprint" class="col-md-6" style="height: 500px"></div>
+            <div class="col-md-6 main-title-report">
+                <input type="button" class="btn btn-success btn-menug" data-key="group" value="Group Findgprint"/> |
+                <input type="button" class="btn btn-success btn-menug" data-key="router" value="Set Router"/> |
+                <input type="button" class="btn btn-success btn-menug" data-key="listrouter" value="List Router" />
+                <div class="row managergroup " style="margin-left: 0px;">
+                    <div class="row margin-top-10">
+                        <div class="col-md-3">
+                            Name:
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control form-namef"/>
+                            <input type="hidden" class="form-idf" value="0"/>
+                        </div>
+                    </div>
+                    <div class="row margin-top-10">
+                        <input type="button" value="SAVE" class="btn btn-danger btn-addnewgroupF"/> |
+                        <input type="button" value="Clear Point" class="btn btn-danger btn-cleanewgroupF" />
+                    </div>
+                    <div class="row margin-top-10">
+                        <table class="table" id="data-groupfindgprint">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Group Name</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row managerRouter dispay_none" style="margin-left: 0px;">
+                    <h1>Manager router</h1>
+                    <input type="hidden" class="IdRouter" value="0"/>
+                    <div class="row">
+                        <div class="col-md-4">
+                            From Group
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-control list-data-group form-groupF">
+                                <option> Load data</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            To Group
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-control list-data-group to-groupF">
+                                <option> Load data</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control notesf" placeholder="Commnet"/>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="button" value="SAVE" class="btn btn-danger btn-saverouter" />
+                        </div>
+                    </div>
+                    <div class="row" style="height: 300px; overflow: auto">
+                        <h3>Select Router</h3>
+                        <table class="table" id="data-grouplist">
+                            <thead>
+                                <tr>
+                                    <th>Group Name</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row managerRouterlist dispay_none">
+                    <h1>list router</h1>
+                    <table class="table" id="data-grouplistline" data-key="none">
+                        <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>FromGroup</th>
+                            <th>Togroup</th>
+                            <th>Line Group</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

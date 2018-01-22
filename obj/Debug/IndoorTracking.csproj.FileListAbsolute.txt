@@ -1,0 +1,171 @@
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\obj\Debug\IndoorTracking.csprojResolveAssemblyReference.cache
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\IndoorTracking.dll.config
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\IndoorTracking.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\IndoorTracking.pdb
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Antlr3.Runtime.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\EntityFramework.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\EntityFramework.SqlServer.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\IndoorTracking_DAL.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Newtonsoft.Json.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Owin.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.Helpers.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.Mvc.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.Optimization.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.Razor.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.Deployment.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.Razor.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\WebGrease.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\IndoorTracking_DAL.pdb
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.Helpers.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.Mvc.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.Optimization.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.Razor.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.Deployment.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.Razor.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Antlr3.Runtime.pdb
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Newtonsoft.Json.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\EntityFramework.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\EntityFramework.SqlServer.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\obj\Debug\IndoorTracking.dll
+C:\Users\NGUYEN_CUONG\Desktop\IndoorTracking\IndoorTracking\obj\Debug\IndoorTracking.pdb
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\IndoorTracking.dll.config
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\IndoorTracking.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\IndoorTracking.pdb
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Antlr3.Runtime.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\EntityFramework.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\EntityFramework.SqlServer.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\IndoorTracking_DAL.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Google.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Web.Infrastructure.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Newtonsoft.Json.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Owin.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.Helpers.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.Mvc.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.Optimization.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.Razor.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.Deployment.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.Razor.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\WebGrease.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\IndoorTracking_DAL.pdb
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.Helpers.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.Mvc.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.Optimization.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.Razor.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.Deployment.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\System.Web.WebPages.Razor.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Antlr3.Runtime.pdb
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Newtonsoft.Json.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\EntityFramework.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\EntityFramework.SqlServer.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Google.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\obj\Debug\IndoorTracking.csprojResolveAssemblyReference.cache
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\obj\Debug\IndoorTracking.dll
+E:\Lam Viec\Siyosa project SVN\Indoor Hoza\IndoorTracking\IndoorTracking\obj\Debug\IndoorTracking.pdb
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\IndoorTracking.dll.config
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\IndoorTracking.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\IndoorTracking.pdb
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Antlr3.Runtime.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\EntityFramework.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\EntityFramework.SqlServer.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\IndoorTracking_DAL.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Newtonsoft.Json.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Owin.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.Helpers.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.Mvc.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.Optimization.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.Razor.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.WebPages.Deployment.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.WebPages.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.WebPages.Razor.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\WebGrease.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\IndoorTracking_DAL.pdb
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.Helpers.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.Mvc.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.Optimization.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.Razor.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.WebPages.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.WebPages.Deployment.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\System.Web.WebPages.Razor.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Antlr3.Runtime.pdb
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Newtonsoft.Json.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\EntityFramework.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\EntityFramework.SqlServer.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\obj\Debug\IndoorTracking.csprojResolveAssemblyReference.cache
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\obj\Debug\IndoorTracking.dll
+D:\Project\document\Indoor-trac-hoza\IndoorTracking\obj\Debug\IndoorTracking.pdb
